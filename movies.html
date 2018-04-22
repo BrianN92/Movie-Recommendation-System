@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <title>Movie Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+<!--
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-social.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css')  }}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='movie.ico')  }}">
+-->
+</head>
+<body>
+<!--    Start of the Navbar-->    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="./index.html" style="font-family:fantasy;"><img src="{{ url_for('static',filename='images/uva_centered_logo.jpg')  }}" height="40" width="80"><strong> Movie Recommendation</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fas fa-film"></i> Movie</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./aboutus.html"><i class="fas fa-info"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!--    End of the Navbar-->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-8">
+                    <h1>Movie Recommendation System</h1>
+                    <p style="font-family: Georgia; font-size: 20px;">Hello, cinephile! We create this page in order to recommend you movies suit you the best. You will get a list of movies we recommend by simply finishing the ratings to those movies on this page. What are you waiting for? <strong>Lets Get It Started!</strong></p>
+                </div>
+                <div class="col col-sm">
+                    <img src="https://i.pinimg.com/originals/ee/fd/4d/eefd4d45c0cd9dd7f3d86b4b49e7fc72.png" height="200" width="200" alt="minions">
+                </div>
+            </div>
+        </div>
+       
+    </header>
+    
+    <div class="container">
+    <form action="" method="post">
+        <div class="row row-header">
+            <div class="col-5 col-sm-3">
+                <h3 style="font-family: Georgia serif; font-size: 34px;">Sign in:</h3>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" value="user">User ID</span>
+                    </div>
+                    <input type="number" class="form-control" name="userid" value={{request.form.userid}}>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Amount</span>
+                    </div>
+                    <input type="number" class="form-control" name="number" value={{request.form.number}}>
+                </div> 
+
+                <input class="btn btn-success" type="submit" value="GET">
+            </div>
+            <!-- Carousel starts from here -->
+            <div class="col col-sm">
+                <div class="d-flex justify-content-center">
+                    <h3 style="font-family: Georgia serif; font-size: 34px;">Hot Movies in 2018</h3>
+                </div>           
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <!-- first slide of the carousel with active-->
+                        <div class="carousel-item active" >
+                            <a href="http://marvel.com/movies/movie/223/avengers_infinity_war"><img class="d-block w-100" src="https://www.moviecliks.com/wp-content/uploads/2018/03/Avengers-Infinity-War-Live-Action-Poster.jpg" alt="uthappizza" style="width:100%; height: 400px;"></a>
+                        </div>
+                        <div class="carousel-item" >
+                            <a href="https://www.imdb.com/title/tt4881806/">
+                                <img src="http://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2017/06/fallen_kingdo_lead.jpg?itok=dX0QIQ58" class="d-block w-100" alt="buffet" style="width:100%; height: 400px;">   
+                            </a>                         
+                        </div>
+                        <div class="carousel-item" >
+                            <a href="http://readyplayeronemovie.com">
+                                <img src="https://i0.wp.com/thebuzzmag.ca/wp-content/uploads/2018/03/Ready-Player-One-Banner-1.jpg" alt="alberto" class="d-block w-100" style="width:100%; height: 400px;">
+                            </a>
+                            
+<!--
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="mt-0">Alberto Somayya</h2>
+                                <h4>Executive Chef</h4>
+                                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                            </div>
+-->
+                        </div>
+                        <div class="carousel-item" >
+                            <a href="https://www.foxmovies.com/movies/deadpool-2">
+                                <img src="https://cdn.movieweb.com/img.news.tops/NEIF3KdbbRgILP_1_a/Deadpool-2-What-We-Know.jpg" class="d-block w-100" alt="buffet" style="width:100%; height: 400px;">   
+                            </a>                         
+                        </div>
+                        <div class="carousel-item" >
+                            <a href="https://www.rottentomatoes.com/m/annihilation/">
+                                <img src="http://image.tmdb.org/t/p/w1280/5zfVNTrkhMu673zma6qhFzG01ig.jpg" class="d-block w-100" alt="buffet" style="width:100%; height: 400px;">   
+                            </a>                         
+                        </div>
+                    </div>
+                    <!-- in order to manually control the carousel -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                        <li data-target="#mycarousel" data-slide-to="3"></li>
+                        <li data-target="#mycarousel" data-slide-to="4"></li>
+                    </ol> 
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>  
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+<!--
+                    <div class="btn-group" id="carouselButtons">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>               
+-->
+                </div>
+            </div>
+            <!-- Carousel starts from here -->
+        </div>  
+    </form>
+    </div>
+    
+<!--
+    <div class="container pl-0">
+        <div class="form-group">
+            <div class="col-8 col-sm-10">
+                <label for="textarea"><h3>Movie List</h3></label>
+                <textarea class="form-control" id="textarea" rows="4"></textarea>
+            </div>
+        </div>
+    </div>
+-->
+
+    
+    
+    <footer class="footer" style="margin-top: 5%;">
+        <div class="container">
+            <div class="row">             
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#">Movie</a></li>
+                        <li><a href="./aboutus.html">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Group members</h5>
+                    <ul>
+                        <li>Jingyun Ning <a href="mailto:jn2ne@virginia.edu">(jn2ne)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Tianyuan Zhu <a href="mailto:tz3wd@virginia.edu">(tz3wd)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Wei Guo <a href="mailto:wg8we@virginia.edu">(wg8we)</a> <i class="fas fa-envelope"></i></li>
+                    </ul>
+<!--
+		              <span class="fa fa-phone"></span> +852 1234 5678<br>
+		              <i class="fa fa-fax" aria-hidden="true"></i> +852 8765 4321<br>
+		              <span class="fa fa-envelope"></span> <a href="mailto:confusion@food.net">confusion@food.net</a>
+-->
+                </div>
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align: center">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fab fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><span class="fab fa-youtube fa-lg"></span></a>
+                        <a class="btn btn-social-icon" href="mailto:"><span class="fa fa-envelope"></span></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2018 Cloud Computing</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel({interval:4000});
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script>
+    
+</body>
+</html>

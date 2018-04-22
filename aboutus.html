@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Movie Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+
+<body>
+    <!--    Start of the Navbar-->    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="./index.html" style="font-family:fantasy;"><img src="{{ url_for('static',filename='images/uva_centered_logo.jpg')  }}" height="40" width="80"><strong> Movie Recommendation</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./movies.html"><i class="fas fa-film"></i> Movie</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fas fa-info"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!--    End of the Navbar-->
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-8">
+                    <h1>Decision Support System</h1>
+                    <p style="font-family: Georgia; font-size: 20px;">Decision support system (DSS) is a computerized information system used to support decision-making in an organization or a business. It lets users sift through and analyze data and information that can be used to solve problems and make better decisions.</p>
+                </div>
+                <div class="col col-sm">
+                    <img src="http://www.cihiconferences.ca/annualreport2015/images/icon_stetho.png" height="200" width="200" alt="DSS">
+                </div>
+            </div>
+        </div>
+       
+    </header>
+
+    <div>
+        <div class="container">
+                <div class="col-12" >
+                    <h3>About Us</h3>
+                    <hr>
+                </div>
+        </div>
+        
+        <div class="container">
+            <div class="row row-content">
+                <div class="col-sm-6">
+                    <h2>Our Project</h2>
+                    <p>A recommender System is one kind of DSS based on the users’ “rating” or “preference”, which has become increasingly popular in recent years, and is utilized in a variety of areas including movies, music, news, books, research and so on. </p>
+                    
+                    <p>So, in this project, we decide to establish a entertainment recommender system based on cloud computing to help users choose what they like (movies, musics, ...).</p>
+                </div>
+                <div class="col-sm" style="margin-top: 5%; margin-bottom: 5%">
+                    <div class="card">
+                        <h3 class="card-header bg-primary text-white">
+                            Facts At a Glance
+                        </h3>
+                        <div class="card-block">
+                            <!-- Discription list -->
+                            <dl class="row">
+                                <dt class="col-6"> Project</dt>
+                                <dd class="col-6"> Decision Support System</dd>
+                                <dt class="col-6"> Course</dt>
+                                <dd class="col-6"> Cloud Computing (CS 6501-010)</dd>
+                                <dt class="col-6"> Started</dt>
+                                <dd class="col-6"> Feb. 2018</dd>
+                                <dt class="col-6"> Group member</dt>
+                                <dd class="col-6"> 
+                                    <li>Jingyun Ning</li>
+                                    <li>Tianyuan Zhu</li>
+                                    <li>Wei Guo</li>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-block bg-faded">
+                        <blockquote class="blockquote">
+                            <!-- mb-0: bottom margin = 0 -->
+                            <p class="mb-0" style="font-family: serif;">
+                                While academics have perceived DSS as a tool to support decision making process, DSS users see DSS as a tool to facilitate organizational processes.
+                            </p>
+                            <!-- using footer to create an author -->
+                            <footer class="blockquote-footer">
+                                Keen, Peter (1980) 
+                                <cite title="Source Title">"Decision support systems : a research perspective."</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="container">
+                <div class="row row-content">
+                    <div class="col" style="margin-top: 10px;">
+                        <h2>Project Component</h2>
+                        <div id="accordion" role="tablist">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="peterhead">
+                                    <h3 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#peter">
+                                        Dataset <small>MovieLens 100K Datasetr</small></a>
+                                    </h3>
+                                </div>
+                                <div role="tabpanel" class="collapse show" id="peter">
+                                    <div class="card-block">
+                                        <ul class="hidden-xs-down">
+                                            <li>100,000 ratings (1-5) from 1000 users on 1700 movies</li>
+                                            <li>Each user has rated at least 20 movies</li>
+                                            <li>Simple demographic info for the users (age, gender, occupation, zip)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="dannyhead">
+                                    <h3 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#danny">
+                                        DigitalOcean <small>- An IaaS Provider</small></a>
+                                    </h3>
+                                </div>
+                                <div role="tabpanel" class="collapse" id="danny">
+                                    <div class="card-block">
+                                        <ul class="hidden-xs-down">
+                                            <li>They are a scalable compute platform with add-on storage, security, and monitoring capabilities to easily run production applications. </li>
+                                            <li>Deploy our VPS around the world in any of 8 datacenter regions.</li>
+                                            <li>Predictable, pay-as-you-go pricing.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="agumbehead">
+                                    <h3 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#agumbe">Flask <small>- A micro web development framework for Python</small></a>
+                                    </h3>
+                                </div>
+                                <div role="tabpanel" class="collapse" id="agumbe">
+                                    <div class="card-block">
+                                        <h4 class="hidden-xs-down">Features:</h4>
+                                        <ul>
+                                            <li>Contains development server and debugger </li>
+                                            <li>Integrated support for unit testing</li>
+                                            <li>Uses Jinja2 templating</li>
+                                            <li>Support for secure cookies (client side sessions)</li>
+                                            <li>Google App Engine compatibility</li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="albertohead">
+                                    <h3 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#alberto">
+                                        Collaborative Filtering <small>based on User Similarity</small></a>
+                                    </h3>
+                                </div>
+                                <div role="tabpanel" class="collapse" id="alberto">
+                                    <div class="card-block">
+                                        <ul class="hidden-xs-down">
+                                            <li>Build the user-item <strong>Rating Matrix</strong></li>
+                                            <li>Build the <strong>Distance Matrix</strong> based on Cosine similarity</li>
+                                            <li>Predict the rating based on Distance Matrix by <strong>Weighted Average</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+    </div>
+
+    <footer class="footer" style="margin-top: 5%;">
+        <div class="container">
+            <div class="row">             
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./movies.html">Movie</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Group members</h5>
+                    <ul>
+                        <li>Jingyun Ning <a href="mailto:jn2ne@virginia.edu">(jn2ne)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Tianyuan Zhu <a href="mailto:tz3wd@virginia.edu">(tz3wd)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Wei Guo <a href="mailto:wg8we@virginia.edu">(wg8we)</a> <i class="fas fa-envelope"></i></li>
+                    </ul>
+<!--
+		              <span class="fa fa-phone"></span> +852 1234 5678<br>
+		              <i class="fa fa-fax" aria-hidden="true"></i> +852 8765 4321<br>
+		              <span class="fa fa-envelope"></span> <a href="mailto:confusion@food.net">confusion@food.net</a>
+-->
+                </div>
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align: center">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fab fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><span class="fab fa-youtube fa-lg"></span></a>
+                        <a class="btn btn-social-icon" href="mailto:"><span class="fa fa-envelope"></span></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2018 Cloud Computing</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+
+</html>

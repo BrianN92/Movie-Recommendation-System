@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>Movie Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--    Start of the Navbar-->    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="./index.html" style="font-family:fantasy;"><img src="{{ url_for('static',filename='images/uva_centered_logo.jpg')  }}" height="40" width="80"><strong> Movie Recommendation</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./movies.html"><i class="fas fa-film"></i> Movie</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./aboutus.html"><i class="fas fa-info"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!--    End of the Navbar-->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-8">
+                    <h1 style="font-family: Geogia">Let's check the result</h1>
+                    <p style="font-family: Georgia; font-size: 20px;">Hello, cinephile! We create this page in order to recommend you movies suit you the best. You will get a list of movies we recommend by simply finishing the ratings to those movies on this page. What are you waiting for? <strong>Lets Get It Started!</strong></p>
+                </div>
+                <div class="col col-sm">
+                    <img src="http://www.pngmart.com/files/1/Light-Bulb-PNG-Free-Download.png" height="200" width="200" alt="bulb">
+                </div>
+            </div>
+        </div>
+       
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-10 col-sm-6">
+                <ul>
+                {% for movie in premovie %}
+                <li><a href="#">{{movie}}</a ></li>
+                {% endfor %}
+                </ul>    
+            </div>
+            <div class="col col-sm">
+                <a>
+                    <img src="./css/minions.png" height="400" width="400" alt="minions">
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer class="footer" style="margin-top: 5%;">
+        <div class="container">
+            <div class="row">             
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./movies.html">Movie</a></li>
+                        <li><a href="./aboutus.html">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Group members</h5>
+                    <ul>
+                        <li>Jingyun Ning <a href="mailto:jn2ne@virginia.edu">(jn2ne)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Tianyuan Zhu <a href="mailto:tz3wd@virginia.edu">(tz3wd)</a> <i class="fas fa-envelope"></i></li>
+                        <li>Wei Guo <a href="mailto:wg8we@virginia.edu">(wg8we)</a> <i class="fas fa-envelope"></i></li>
+                    </ul>
+<!--
+		              <span class="fa fa-phone"></span> +852 1234 5678<br>
+		              <i class="fa fa-fax" aria-hidden="true"></i> +852 8765 4321<br>
+		              <span class="fa fa-envelope"></span> <a href="mailto:confusion@food.net">confusion@food.net</a>
+-->
+                </div>
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align: center">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fab fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><span class="fab fa-youtube fa-lg"></span></a>
+                        <a class="btn btn-social-icon" href="mailto:"><span class="fa fa-envelope"></span></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2018 Cloud Computing</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
