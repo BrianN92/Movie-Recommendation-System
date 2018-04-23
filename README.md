@@ -1,6 +1,6 @@
 # Movie-Recommendation-System
 
-![alt text](https://github.com/BrianN92/Movie-Recommendation-System/blob/master/WechatIMG133.png "Logo Title Text 1")
+![alt text](https://github.com/BrianN92/Movie-Recommendation-System/blob/master/WechatIMG133.png "Website Home Page")
 
 Decision support system (DSS) is a computerized information system used to support decision-making in an organization or a business. It lets users sift through and analyze data and information that can be used to solve problems and make better decisions.
 
